@@ -56,5 +56,29 @@ namespace Coin.Tests
             //assert
             Assert.AreEqual(1, CoinCal.GetNickels());
         }
+        [TestMethod]
+        public void CalculateCoins_AddAPenny_True()
+        {
+            //arrange
+
+            //act
+            CoinCal.CalculateCoins(4);
+
+            //assert
+            Assert.AreEqual(4, CoinCal.GetPennies());
+        }
+        [TestMethod]
+        public void CalculateCoins_AddCoins_True()
+        {
+            //arrange
+
+            //act
+            CoinCal.CalculateCoins(37);
+
+            //assert
+            Assert.AreEqual(1, CoinCal.GetQuarters());
+            Assert.AreEqual(1, CoinCal.GetDimes());
+            Assert.AreEqual(2, CoinCal.GetPennies());
+        }
     }
 }

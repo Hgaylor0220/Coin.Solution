@@ -5,6 +5,7 @@ namespace Coin
         private static int _quarters;
         private static int _dimes;
         private static int _nickels;
+        private static int _pennies;
         public static int GetQuarters() 
         {
             return _quarters; 
@@ -17,6 +18,10 @@ namespace Coin
         {
             return _nickels;
         }
+        public static int GetPennies()
+        {
+            return _pennies;
+        }
         public static void SetQuarter(int newQuarter)
         {
             _quarters = newQuarter;
@@ -26,7 +31,8 @@ namespace Coin
         {
             CoinCal.SetQuarter(0); 
             _dimes = 0;
-            _nickels =0;         
+            _nickels = 0; 
+            _pennies = 0;        
         }
         public static void  CalculateCoins(int cents)
         {
@@ -44,6 +50,11 @@ namespace Coin
             {
                 _nickels++;
                 CalculateCoins(cents-5);
+            }
+            else if ( cents >= 1)
+            {
+                _pennies++;
+                CalculateCoins(cents - 1 );
             }
         }
     }
