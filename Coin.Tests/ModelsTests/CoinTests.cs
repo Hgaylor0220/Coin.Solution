@@ -7,15 +7,26 @@ namespace Coin.Tests
     public class CoinTest
     {
         [TestMethod]
-        public void CalculateCoins_AddAQuarter_True()
+        public void GetQuarters_RetrievesQuartersFromCoins_True()
         {
             //arrange
-            
+
             //act
-            CoinCal.CalculateCoins(25);
-            
+            CoinCal.SetQuarter(5);
+
             //assert
-            Assert.AreEqual(1,CoinCal.GetQuarters());
+            Assert.AreEqual(5, CoinCal.GetQuarters());
         }
+        // [TestMethod]
+        // public void CalculateCoins_AddAQuarter_True()
+        // {
+        //     //arrange
+            
+        //     //act
+        //     CoinCal.CalculateCoins(25);
+            
+        //     //assert
+        //     Assert.AreEqual(1,CoinCal.GetQuarters());
+        // }
     }
 }
