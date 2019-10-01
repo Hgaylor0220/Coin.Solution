@@ -34,5 +34,16 @@ namespace Coin.Tests
             //assert
             Assert.AreEqual(2,CoinCal.GetQuarters());
         }
+        [TestMethod]
+        public void CalculateCoins_AddADime_True()
+        {
+            //arrange
+
+            //act
+            CoinCal.CalculateCoins(10);
+
+            //assert
+            Assert.AreEqual(1, CoinCal.GetDimes());
+        }
     }
 }
