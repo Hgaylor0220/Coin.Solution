@@ -1,0 +1,9 @@
+Scenario: display smallest number of coins to reach an amount
+When the user enters an amount
+Given the amount is in bounds
+Then show the user the smallest number of coins to reach the amount
+
+Scenario: display that the input is invalid
+When the user submits an amount
+Given that the amount is not in bounds
+Then alert the user that the input is not valid
