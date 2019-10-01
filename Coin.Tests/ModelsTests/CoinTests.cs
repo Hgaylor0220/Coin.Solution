@@ -45,5 +45,16 @@ namespace Coin.Tests
             //assert
             Assert.AreEqual(1, CoinCal.GetDimes());
         }
+        [TestMethod]
+        public void CalculateCoins_AddANickel_True()
+        {
+            //arrange
+
+            //act
+            CoinCal.CalculateCoins(5);
+
+            //assert
+            Assert.AreEqual(1, CoinCal.GetNickels());
+        }
     }
 }
