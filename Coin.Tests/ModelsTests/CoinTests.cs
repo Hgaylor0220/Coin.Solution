@@ -1,11 +1,17 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Coin;
+using System;
 
 namespace Coin.Tests
 {
     [TestClass]
-    public class CoinTest
+    public class CoinTest : IDisposable
     {
+        public void Dispose()
+        {
+            CoinCal.ClearAll();
+        }
+        
         [TestMethod]
         public void GetQuarters_RetrievesQuartersFromCoins_True()
         {
@@ -17,16 +23,16 @@ namespace Coin.Tests
             //assert
             Assert.AreEqual(5, CoinCal.GetQuarters());
         }
-        // [TestMethod]
-        // public void CalculateCoins_AddAQuarter_True()
-        // {
-        //     //arrange
+        [TestMethod]
+        public void CalculateCoins_AddAQuarter_True()
+        {
+            //arrange
             
-        //     //act
-        //     CoinCal.CalculateCoins(25);
+            //act
+            CoinCal.CalculateCoins(55);
             
-        //     //assert
-        //     Assert.AreEqual(1,CoinCal.GetQuarters());
-        // }
+            //assert
+            Assert.AreEqual(2,CoinCal.GetQuarters());
+        }
     }
 }
